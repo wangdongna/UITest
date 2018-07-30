@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.FunctionPermission &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.FunctionPermission 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+
+<div class="viewcode-block" id="FunctionPermissionList"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissionList">[文档]</a><span class="k">class</span> <span class="nc">FunctionPermissionList</span><span class="p">():</span>
+<div class="viewcode-block" id="FunctionPermissionList.FunctionPermissionItem"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissionList.FunctionPermissionItem">[文档]</a>    <span class="k">class</span> <span class="nc">FunctionPermissionItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class = &#39;pop-role-list-item&#39; and text() = &#39;#@FuncPermissionName&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FunctionPermissionList.FunctionPermissionItem.Click"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissionList.FunctionPermissionItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FuncPermissionName</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@FuncPermissionName&#39;</span><span class="p">,</span> <span class="n">FuncPermissionName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissionList</span><span class="o">.</span><span class="n">FunctionPermissionItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FunctionPermissionList.FunctionPermissionItem.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissionList.FunctionPermissionItem.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FuncPermissionName</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@FuncPermissionName&#39;</span><span class="p">,</span> <span class="n">FuncPermissionName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissionList</span><span class="o">.</span><span class="n">FunctionPermissionItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div></div>
+
+
+<div class="viewcode-block" id="HideButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.HideButton">[文档]</a><span class="k">class</span> <span class="nc">HideButton</span><span class="p">:</span>
+<div class="viewcode-block" id="HideButton.Public"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.HideButton.Public">[文档]</a>    <span class="k">class</span> <span class="nc">Public</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;公共权限&#39;]/../span[text()=&#39;隐藏&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList">[文档]</a><span class="k">class</span> <span class="nc">FunctionPermissoionContentList</span><span class="p">():</span>
+<div class="viewcode-block" id="FunctionPermissoionContentList.PermissionInput"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.PermissionInput">[文档]</a>    <span class="k">class</span> <span class="nc">PermissionInput</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;资产报警信息&#39;]/../div/div[contains(@class,&#39;pop-radio-button&#39;)][3]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail">[文档]</a>    <span class="k">class</span> <span class="nc">FunctionPermissionDetail</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;#@Name&#39;]/../div/div[contains(@class,&#39;pop-radio-button&#39;)]&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">index</span>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Click_None"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Click_None">[文档]</a>        <span class="k">def</span> <span class="nf">Click_None</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Click_OnlyCheck"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Click_OnlyCheck">[文档]</a>        <span class="k">def</span> <span class="nf">Click_OnlyCheck</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Click_All"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Click_All">[文档]</a>        <span class="k">def</span> <span class="nf">Click_All</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_None"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_None">[文档]</a>        <span class="k">def</span> <span class="nf">Verify_Selected_None</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyAttribute</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;selected&#39;</span><span class="p">,</span> <span class="s1">&#39;contain&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_OnlyCheck"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_OnlyCheck">[文档]</a>        <span class="k">def</span> <span class="nf">Verify_Selected_OnlyCheck</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyAttribute</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;selected&#39;</span><span class="p">,</span>
+                                                                                                <span class="s1">&#39;contain&#39;</span><span class="p">)</span></div>
+<div class="viewcode-block" id="FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_All"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.FunctionPermissoionContentList.FunctionPermissionDetail.Verify_Selected_All">[文档]</a>        <span class="k">def</span> <span class="nf">Verify_Selected_All</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FunctionPermissoionContentList</span><span class="o">.</span><span class="n">FunctionPermissionDetail</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyAttribute</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;selected&#39;</span><span class="p">,</span>
+                                                                                                <span class="s1">&#39;contain&#39;</span><span class="p">)</span></div></div></div>
+
+<div class="viewcode-block" id="CreateFunctionRoleButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.CreateFunctionRoleButton">[文档]</a><span class="k">class</span> <span class="nc">CreateFunctionRoleButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class = &#39;pop-manage-list-title-action-item&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RoleName"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.RoleName">[文档]</a><span class="k">class</span> <span class="nc">RoleName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;角色名称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditFucntionPermissionButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.EditFucntionPermissionButton">[文档]</a><span class="k">class</span> <span class="nc">EditFucntionPermissionButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;form-bottom-bar-btn&#39;]//span[text() = &#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteFunctionRoleButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.DeleteFunctionRoleButton">[文档]</a><span class="k">class</span> <span class="nc">DeleteFunctionRoleButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;form-bottom-bar-btn&#39;]//span[text() = &#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfirmDeleteDialog"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.ConfirmDeleteDialog">[文档]</a><span class="k">class</span> <span class="nc">ConfirmDeleteDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="ConfirmDeleteDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.ConfirmDeleteDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ForbidenDeleteDialog"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.ForbidenDeleteDialog">[文档]</a><span class="k">class</span> <span class="nc">ForbidenDeleteDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="ForbidenDeleteDialog.OKButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.ForbidenDeleteDialog.OKButton">[文档]</a>    <span class="k">class</span> <span class="nc">OKButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;好&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="SaveFunctionPermissionButton"><a class="viewcode-back" href="../../page.html#page.FunctionPermission.SaveFunctionPermissionButton">[文档]</a><span class="k">class</span> <span class="nc">SaveFunctionPermissionButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;form-bottom-bar-btn&#39;]//span[text() = &#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

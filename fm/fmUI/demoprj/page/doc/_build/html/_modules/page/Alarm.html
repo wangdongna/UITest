@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Alarm &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Alarm 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    demoprj.Page.Alarm</span>
+<span class="sd">    ~~~~~~~~~~~~~~</span>
+
+<span class="sd">    :Using: from demoprj.page import Alarm</span>
+
+<span class="sd">    :Description: All the class in this module are inherited from class WebElement.</span>
+<span class="sd">                    :from knitter.webelement import WebElement</span>
+<span class="sd">    :copyright: (c) 2016 by Emma.</span>
+<span class="sd">    :license: Schneider Electric, see LICENSE for more details.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+
+<div class="viewcode-block" id="CreateTicketButton"><a class="viewcode-back" href="../../page.html#page.Alarm.CreateTicketButton">[文档]</a><span class="k">class</span> <span class="nc">CreateTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-table-cell pop-alarm-table-action&#39;]/span/a[text()=&#39;创建工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ViewTicketButton"><a class="viewcode-back" href="../../page.html#page.Alarm.ViewTicketButton">[文档]</a><span class="k">class</span> <span class="nc">ViewTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-table-cell pop-alarm-table-action&#39;]/span/a[text()=&#39;查看工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmInnerCricle"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmInnerCricle">[文档]</a><span class="k">class</span> <span class="nc">AlarmInnerCricle</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-background&#39;]/div[@class=&#39;pop-alarm-center&#39;]/div[@class=&#39;flex-center&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Wait"><a class="viewcode-back" href="../../page.html#page.Alarm.Wait">[文档]</a><span class="k">class</span> <span class="nc">Wait</span><span class="p">():</span>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Wait.WaitForAlarmListDisplay"><a class="viewcode-back" href="../../page.html#page.Alarm.Wait.WaitForAlarmListDisplay">[文档]</a>    <span class="k">def</span> <span class="nf">WaitForAlarmListDisplay</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">AlarmInnerCricle</span><span class="o">.</span><span class="n">WaitForAppearing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">AlarmInnerCricle</span><span class="o">.</span><span class="n">WaitForDisappearing</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FilterButton"><a class="viewcode-back" href="../../page.html#page.Alarm.FilterButton">[文档]</a><span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-settingCondition&#39;]//span[text()=&#39;筛选&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmFilterSideBar"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmFilterSideBar">[文档]</a><span class="k">class</span> <span class="nc">AlarmFilterSideBar</span><span class="p">():</span>
+<div class="viewcode-block" id="AlarmFilterSideBar.UnSolvedButton"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmFilterSideBar.UnSolvedButton">[文档]</a>    <span class="k">class</span> <span class="nc">UnSolvedButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;未解除报警&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmFilterSideBar.FilterButton"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmFilterSideBar.FilterButton">[文档]</a>    <span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;sidebar-bottom-action&#39;]/button&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="AlarmList"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmList">[文档]</a><span class="k">class</span> <span class="nc">AlarmList</span><span class="p">():</span>
+<div class="viewcode-block" id="AlarmList.AlarmCount"><a class="viewcode-back" href="../../page.html#page.Alarm.AlarmList.AlarmCount">[文档]</a>    <span class="k">class</span> <span class="nc">AlarmCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;pop-alarm-table-row&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

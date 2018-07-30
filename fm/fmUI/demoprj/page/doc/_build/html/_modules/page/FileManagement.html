@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.FileManagement &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.FileManagement 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">knitter</span> <span class="k">import</span> <span class="n">log</span>
+
+<div class="viewcode-block" id="FilterInput"><a class="viewcode-back" href="../../page.html#page.FileManagement.FilterInput">[文档]</a><span class="k">class</span> <span class="nc">FilterInput</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;search-input&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CreateFolderButton"><a class="viewcode-back" href="../../page.html#page.FileManagement.CreateFolderButton">[文档]</a><span class="k">class</span> <span class="nc">CreateFolderButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;新建文件夹&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CreateFolderDialog"><a class="viewcode-back" href="../../page.html#page.FileManagement.CreateFolderDialog">[文档]</a><span class="k">class</span> <span class="nc">CreateFolderDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="CreateFolderDialog.FolderName"><a class="viewcode-back" href="../../page.html#page.FileManagement.CreateFolderDialog.FolderName">[文档]</a>    <span class="k">class</span> <span class="nc">FolderName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;文件夹名称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CreateFolderDialog.CreateButton"><a class="viewcode-back" href="../../page.html#page.FileManagement.CreateFolderDialog.CreateButton">[文档]</a>    <span class="k">class</span> <span class="nc">CreateButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;新建&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FileList"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList">[文档]</a><span class="k">class</span> <span class="nc">FileList</span><span class="p">():</span>
+<div class="viewcode-block" id="FileList.FileListCount"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList.FileListCount">[文档]</a>    <span class="k">class</span> <span class="nc">FileListCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table doc-list-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileList.FileListItem"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList.FileListItem">[文档]</a>    <span class="k">class</span> <span class="nc">FileListItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//table[@class=&#39;table fixed-table doc-list-table&#39;]/tbody/tr[index]/td/a&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FileList.FileListItem.GetFileName"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList.FileListItem.GetFileName">[文档]</a>        <span class="k">def</span> <span class="nf">GetFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FileList</span><span class="o">.</span><span class="n">FileListItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FileList.FileListItemName"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList.FileListItemName">[文档]</a>    <span class="k">class</span> <span class="nc">FileListItemName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//table[@class=&#39;table fixed-table doc-list-table&#39;]/tbody/tr/td/a[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FileList.FileListItemName.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.FileManagement.FileList.FileListItemName.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FileList</span><span class="o">.</span><span class="n">FileListItemName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div></div></div>
+
+
+<div class="viewcode-block" id="VerifyContain"><a class="viewcode-back" href="../../page.html#page.FileManagement.VerifyContain">[文档]</a><span class="k">def</span> <span class="nf">VerifyContain</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">):</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether filter file name [</span><span class="si">%s</span><span class="s2">] contains filter key[</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

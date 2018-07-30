@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Profile &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Profile 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">knitter</span> <span class="k">import</span> <span class="n">log</span>
+
+<div class="viewcode-block" id="ProfileButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileButton">[文档]</a><span class="k">class</span> <span class="nc">ProfileButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-mainmenu-user&#39;]/button/div&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LogoutButton"><a class="viewcode-back" href="../../page.html#page.Profile.LogoutButton">[文档]</a><span class="k">class</span> <span class="nc">LogoutButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-userprofile-logout&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LogoutConfirmButton"><a class="viewcode-back" href="../../page.html#page.Profile.LogoutConfirmButton">[文档]</a><span class="k">class</span> <span class="nc">LogoutConfirmButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]/button&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileSideBarInfo"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo">[文档]</a><span class="k">class</span> <span class="nc">ProfileSideBarInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="ProfileSideBarInfo.ModifyPasswordButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo.ModifyPasswordButton">[文档]</a>    <span class="k">class</span> <span class="nc">ModifyPasswordButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;修改密码&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileSideBarInfo.NickNameEditButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo.NickNameEditButton">[文档]</a>    <span class="k">class</span> <span class="nc">NickNameEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-userprofile-edit-button&#39;]/span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileSideBarInfo.PositionEditButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo.PositionEditButton">[文档]</a>    <span class="k">class</span> <span class="nc">PositionEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-userprofile-edit-button&#39;]/span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="ProfileSideBarInfo.MobilePhoneButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo.MobilePhoneButton">[文档]</a>    <span class="k">class</span> <span class="nc">MobilePhoneButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;手机&#39;]/../../../div/div/span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileSideBarInfo.EmailEditButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileSideBarInfo.EmailEditButton">[文档]</a>    <span class="k">class</span> <span class="nc">EmailEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;电子邮件&#39;]/../../../div/div/span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ChangePassowordInfo"><a class="viewcode-back" href="../../page.html#page.Profile.ChangePassowordInfo">[文档]</a><span class="k">class</span> <span class="nc">ChangePassowordInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="ChangePassowordInfo.OldPassword"><a class="viewcode-back" href="../../page.html#page.Profile.ChangePassowordInfo.OldPassword">[文档]</a>    <span class="k">class</span> <span class="nc">OldPassword</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;原始密码&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ChangePassowordInfo.NewPassword"><a class="viewcode-back" href="../../page.html#page.Profile.ChangePassowordInfo.NewPassword">[文档]</a>    <span class="k">class</span> <span class="nc">NewPassword</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;新密码&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ChangePassowordInfo.NewPasswordAgain"><a class="viewcode-back" href="../../page.html#page.Profile.ChangePassowordInfo.NewPasswordAgain">[文档]</a>    <span class="k">class</span> <span class="nc">NewPasswordAgain</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;确认新密码&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ChangePassowordInfo.CompleteButton"><a class="viewcode-back" href="../../page.html#page.Profile.ChangePassowordInfo.CompleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">CompleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;完成&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ProfileInfo"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo">[文档]</a><span class="k">class</span> <span class="nc">ProfileInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="ProfileInfo.NickName"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.NickName">[文档]</a>    <span class="k">class</span> <span class="nc">NickName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-content&#39;]//label[text()=&#39;昵称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileInfo.MobilePhone"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.MobilePhone">[文档]</a>    <span class="k">class</span> <span class="nc">MobilePhone</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-content&#39;]//label[text()=&#39;手机&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileInfo.Email"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.Email">[文档]</a>    <span class="k">class</span> <span class="nc">Email</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-content&#39;]//label[text()=&#39;电子邮箱&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileInfo.PositionButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.PositionButton">[文档]</a>    <span class="k">class</span> <span class="nc">PositionButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;职务&#39;]/../div[@class=&#39;pop-viewableDropDownMenu-ddm&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileInfo.CompleteButton"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.CompleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">CompleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;完成&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProfileInfo.PositionItem"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.PositionItem">[文档]</a>    <span class="k">class</span> <span class="nc">PositionItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]/span[@label=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="ProfileInfo.PositionItem.Click"><a class="viewcode-back" href="../../page.html#page.Profile.ProfileInfo.PositionItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ProfileInfo</span><span class="o">.</span><span class="n">PositionItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="VerifyEqual"><a class="viewcode-back" href="../../page.html#page.Profile.VerifyEqual">[文档]</a><span class="k">def</span> <span class="nf">VerifyEqual</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">act</span><span class="p">):</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether value [</span><span class="si">%s</span><span class="s2">] is equal to [</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">act</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="n">act</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Equal!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not equal!&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

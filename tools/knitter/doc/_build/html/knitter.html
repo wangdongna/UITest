@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation for knitter package &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="index.html" />
+    <link rel="prev" title="Welcome to Automation API lib’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation-for-knitter-package">
+<h1>Documentation for knitter package<a class="headerlink" href="#documentation-for-knitter-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="module-knitter.webelement">
+<span id="knitter-webelement-module"></span><h2>knitter.webelement module<a class="headerlink" href="#module-knitter.webelement" title="永久链接至标题">¶</a></h2>
+<div class="section" id="knitter-webelement">
+<h3>knitter.webelement<a class="headerlink" href="#knitter-webelement" title="永久链接至标题">¶</a></h3>
+<p>Browser operation and dom element operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2016 by Emma.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">Schneider Electric, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="class">
+<dt id="knitter.webelement.WebElement">
+<em class="property">class </em><code class="descclassname">knitter.webelement.</code><code class="descname">WebElement</code><span class="sig-paren">(</span><em>*args</em>, <em>**kws</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="knitter.webelement.WebElement.IsAttribute">
+<code class="descname">IsAttribute</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>method='contain'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.IsAttribute"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.IsAttribute" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element&#8217;s attribute [name]&#8217;s value &lt;method&gt; [value].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.IsAttribute(&#8220;color&#8221;, &#8220;rgb(118, 122, 122)&#8221;, &#8220;equal&#8221;)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; the attribute name, e.g. font-size, text (css attribute)</li>
+<li><strong>value</strong> &#8211; the Expected value of attribute value which need to verify</li>
+<li><strong>method</strong> &#8211; the verification method of acutal [name]&#8217;s value and expected value [value]
+method default value is &#8216;contain&#8217;
+method option: &#8216;equal&#8217;|&#8217;not equal&#8217;|&#8217;contain&#8217;|&#8217;not contain&#8217;|&#8217;in&#8217;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>true: if the element&#8217;s attribute [name]&#8217;s value &lt;method&gt; [value].</li>
+<li>false: if the element&#8217;s attribute [name]&#8217;s value not &lt;method&gt; [value].</li>
+<li>Case is failed if the method is not in (&#8216;equal&#8217;|&#8217;not equal&#8217;|&#8217;contain&#8217;|&#8217;not contain&#8217;|&#8217;in&#8217;), and log &#8220;code error&#8221;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.IsEnabled">
+<code class="descname">IsEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.IsEnabled"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.IsEnabled" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is enabled, use the function is_enabled(), of attribute enabled/disabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.IsEnabled()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>true: if the element control is enabled.</li>
+<li>false: if the element control is disabled.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.IsExist">
+<code class="descname">IsExist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.IsExist"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.IsExist" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is existed, by find_elements().length &gt; 0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.IsExist()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>true: if the element control is existed.</li>
+<li>false: if the element control is not existed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.IsVisible">
+<code class="descname">IsVisible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.IsVisible"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.IsVisible" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is visible, use the function is_displayed(), of attribute [display:none].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.IsVisible()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>true: if the element control is visible.</li>
+<li>false: if the element control is not visible, there is [display:none] in the style.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyAttribute">
+<code class="descname">VerifyAttribute</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>method='equal'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyAttribute"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyAttribute" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element&#8217;s attribute [name]&#8217;s value &lt;method&gt; [value].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"><ul class="first simple">
+<li>DatePicker.ReminderDate.VerifyAttribute(&#8216;ng-model&#8217;, &#8216;hello&#8217;, method=&#8217;equal&#8217;)</li>
+<li>DatePicker.ReminderDate.VerifyAttribute(&#8216;ng-model&#8217;, &#8216;hello&#8217;, method=&#8217;contain&#8217;)</li>
+<li>DatePicker.ReminderDate.VerifyAttribute(&#8216;ng-model&#8217;, &#8216;hello&#8217;, method=&#8217;in&#8217;)</li>
+<li>DatePicker.ReminderDate.VerifyAttribute(&#8216;ng-model&#8217;, &#8216;hello&#8217;, method=&#8217;not equal&#8217;)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Description for &#8220;method&#8221;:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li>equal  =&gt; real value is &#8216;hello&#8217;</li>
+<li>has    =&gt; real value contains &#8216;hello&#8217;, e.g. &#8216;hello world&#8217;.</li>
+<li>in     =&gt; real value in &#8216;hello&#8217;, e.g. &#8216;he&#8217;</li>
+<li>differ =&gt; real value not equal to &#8216;hello&#8217;, e.g. &#8216;hehe&#8217;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyEnabled">
+<code class="descname">VerifyEnabled</code><span class="sig-paren">(</span><em>trueOrfalse</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyEnabled"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyEnabled" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is enabled or not, use the function is_enabled()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.VerifyEnabled(False)</li>
+<li>User.UserSaveButton.VerifyEnabled(True)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>trueORfalse</strong> &#8211; True/False</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>pass: if trueORfalse == True and the element is enabled.</li>
+<li>pass: if trueORfalse == False and the element is not enabled.</li>
+<li>fail: if trueORfalse == True and the element is not enabled.</li>
+<li>fail: if trueORfalse == False and the element is enabled.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyExistence">
+<code class="descname">VerifyExistence</code><span class="sig-paren">(</span><em>trueORfalse</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyExistence"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyExistence" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is existed or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.VerifyExistence(False)</li>
+<li>User.UserSaveButton.VerifyExistence(True)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>trueORfalse</strong> &#8211; True/False</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>pass: if trueORfalse == True and the element is existed.</li>
+<li>pass: if trueORfalse == False and the element is not existed.</li>
+<li>fail: if trueORfalse == True and the element is not existed.</li>
+<li>fail: if trueORfalse == False and the element is existed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyInnerHTMLContains">
+<code class="descname">VerifyInnerHTMLContains</code><span class="sig-paren">(</span><em>contain_content</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyInnerHTMLContains"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyInnerHTMLContains" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element&#8217;s atrribute&lt;innerHTML》 value contains [contain_content]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>&lt;Element_Class&gt;.VerifyInnerHTMLContains(&#8220;&lt;body hello world! /body&gt;&#8221;)</li>
+<li>Not use this method until now.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>contain_content</strong> &#8211; it&#8217;s type can be &lt;List&gt; or &lt;string&gt;, the expected content.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last">
+<li><dl class="first docutils">
+<dt>pass: if &lt;contain_content&gt; is list, all the item is in [get_attribute(&#8216;innerHTML&#8217;)]</dt>
+<dd><p class="first last">if contain_content is string, the content string is in [get_attribute(&#8216;innerHTML&#8217;)]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>fail: if &lt;contain_content&gt; is list, not all the item in [get_attribute(&#8216;innerHTML&#8217;)]</dt>
+<dd><p class="first last">if contain_content is string, the content string is not in [get_attribute(&#8216;innerHTML&#8217;)]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyObjectCount">
+<code class="descname">VerifyObjectCount</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyObjectCount"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyObjectCount" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element&#8217;s count is equal to [number]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>Ticket.TicketItem.VerifyObjectCount(10)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>number</strong> &#8211; the Expected number of element</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>pass: if the element&#8217;s attribute [name]&#8217;s value &lt;method&gt; [value].</li>
+<li>fail: if the element&#8217;s attribute [name]&#8217;s value not &lt;method&gt; [value].</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="knitter.webelement.WebElement.VerifyVisible">
+<code class="descname">VerifyVisible</code><span class="sig-paren">(</span><em>trueORfalse</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/knitter/webelement.html#WebElement.VerifyVisible"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#knitter.webelement.WebElement.VerifyVisible" title="永久链接至目标">¶</a></dt>
+<dd><p>Verify that if the element is visible or not, use the function is_displayed(), of attribute [display:none].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><ul class="first simple">
+<li>User.UserSaveButton.VerifyVisible(False)</li>
+<li>User.UserSaveButton.VerifyVisible(True)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>trueORfalse</strong> &#8211; True/False</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return:</th><td class="field-body"><ul class="first last simple">
+<li>pass: if trueORfalse == True and the element is displayed.</li>
+<li>pass: if trueORfalse == False and the element is not displayed.</li>
+<li>fail: if trueORfalse == True and the element is not displayed.</li>
+<li>fail: if trueORfalse == False and the element is displayed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation for knitter package</a><ul>
+<li><a class="reference internal" href="#module-knitter.webelement">knitter.webelement module</a><ul>
+<li><a class="reference internal" href="#knitter-webelement">knitter.webelement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="上一章">Welcome to Automation API lib&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/knitter.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/knitter.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

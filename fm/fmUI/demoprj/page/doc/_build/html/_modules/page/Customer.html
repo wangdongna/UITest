@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Customer &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Customer 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+
+<div class="viewcode-block" id="CustomerList"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerList">[文档]</a><span class="k">class</span> <span class="nc">CustomerList</span><span class="p">():</span>
+<div class="viewcode-block" id="CustomerList.CustomerItem"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerList.CustomerItem">[文档]</a>    <span class="k">class</span> <span class="nc">CustomerItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-customer-list-item-name&#39; and text()=&#39;#@CustomerName&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="CustomerList.CustomerItem.VerifyCustomerExistence"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerList.CustomerItem.VerifyCustomerExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyCustomerExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customerName</span><span class="p">,</span> <span class="n">TrueOrFalse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@CustomerName&#39;</span><span class="p">,</span> <span class="n">customerName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CustomerList</span><span class="o">.</span><span class="n">CustomerItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerList.CustomerItem.Click"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerList.CustomerItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customerName</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@CustomerName&#39;</span><span class="p">,</span> <span class="n">customerName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">CustomerList</span><span class="o">.</span><span class="n">CustomerItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+
+<div class="viewcode-block" id="AddCustomerButton"><a class="viewcode-back" href="../../page.html#page.Customer.AddCustomerButton">[文档]</a><span class="k">class</span> <span class="nc">AddCustomerButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-manage-list-title-action-item&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerSaveButton"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerSaveButton">[文档]</a><span class="k">class</span> <span class="nc">CustomerSaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerEditButton"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerEditButton">[文档]</a><span class="k">class</span> <span class="nc">CustomerEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerDeleteButton"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerDeleteButton">[文档]</a><span class="k">class</span> <span class="nc">CustomerDeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfirmDeleteDialog"><a class="viewcode-back" href="../../page.html#page.Customer.ConfirmDeleteDialog">[文档]</a><span class="k">class</span> <span class="nc">ConfirmDeleteDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="ConfirmDeleteDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.Customer.ConfirmDeleteDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ForbidenDeleteDialog"><a class="viewcode-back" href="../../page.html#page.Customer.ForbidenDeleteDialog">[文档]</a><span class="k">class</span> <span class="nc">ForbidenDeleteDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="ForbidenDeleteDialog.OKButton"><a class="viewcode-back" href="../../page.html#page.Customer.ForbidenDeleteDialog.OKButton">[文档]</a>    <span class="k">class</span> <span class="nc">OKButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;好&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="CustomerInfo"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo">[文档]</a><span class="k">class</span> <span class="nc">CustomerInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="CustomerInfo.Name"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-customer-detail-name&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.Code"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.Code">[文档]</a>    <span class="k">class</span> <span class="nc">Code</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;客户编码&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.CodeLabel"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.CodeLabel">[文档]</a>    <span class="k">class</span> <span class="nc">CodeLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;客户编码&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.Address"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.Address">[文档]</a>    <span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;客户地址&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.OperTime"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.OperTime">[文档]</a>    <span class="k">class</span> <span class="nc">OperTime</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.CustomerLogo"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.CustomerLogo">[文档]</a>    <span class="k">class</span> <span class="nc">CustomerLogo</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.CustmerList"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.CustmerList">[文档]</a>    <span class="k">class</span> <span class="nc">CustmerList</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-customer-list-item-name&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanPerson</span><span class="p">:</span>
+        <span class="k">class</span> <span class="nc">AddButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;section-panel-title&#39;]/span&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.Name"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.Name">[文档]</a>        <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-admin-window&#39;]/ul/li//input&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.Position"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.Position">[文档]</a>        <span class="k">class</span> <span class="nc">Position</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-admin-window&#39;]/ul/li//input&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.MobilePhone"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.MobilePhone">[文档]</a>        <span class="k">class</span> <span class="nc">MobilePhone</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-admin-window&#39;]/ul/li//input&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.Email"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.Email">[文档]</a>        <span class="k">class</span> <span class="nc">Email</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-admin-window&#39;]/ul/li//input&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.AddButton"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.AddButton">[文档]</a>        <span class="k">class</span> <span class="nc">AddButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]/button&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span></div>
+<div class="viewcode-block" id="CustomerInfo.MaintanPerson.QuitButton"><a class="viewcode-back" href="../../page.html#page.Customer.CustomerInfo.MaintanPerson.QuitButton">[文档]</a>        <span class="k">class</span> <span class="nc">QuitButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]/button&quot;</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Maintanence &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Maintanence 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">knitter</span> <span class="k">import</span> <span class="n">log</span>
+
+
+<div class="viewcode-block" id="MaintanenceListButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceListButton">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceListButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;年度计划管理&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskButton">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceTaskButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;月度任务列表&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AddMaintanenceButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.AddMaintanenceButton">[文档]</a><span class="k">class</span> <span class="nc">AddMaintanenceButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;计划&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditMaintanenceButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.EditMaintanenceButton">[文档]</a><span class="k">class</span> <span class="nc">EditMaintanenceButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteMaintanenceButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.DeleteMaintanenceButton">[文档]</a><span class="k">class</span> <span class="nc">DeleteMaintanenceButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteConfirmDialog"><a class="viewcode-back" href="../../page.html#page.Maintanence.DeleteConfirmDialog">[文档]</a><span class="k">class</span> <span class="nc">DeleteConfirmDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="DeleteConfirmDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.DeleteConfirmDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteConfirmDialog.QuitButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.DeleteConfirmDialog.QuitButton">[文档]</a>    <span class="k">class</span> <span class="nc">QuitButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;放弃&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="MaintanenceContent"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceContent">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceContent</span><span class="p">():</span>
+<div class="viewcode-block" id="MaintanenceContent.MainContent"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceContent.MainContent">[文档]</a>    <span class="k">class</span> <span class="nc">MainContent</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;detail-describe&#39;]/div&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceContent.TaskCount"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceContent.TaskCount">[文档]</a>    <span class="k">class</span> <span class="nc">TaskCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;detail-item&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FilterButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterButton">[文档]</a><span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;maintenance-header-filter&#39;]//span[text()=&#39;筛选&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BackTolistButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.BackTolistButton">[文档]</a><span class="k">class</span> <span class="nc">BackTolistButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class=&#39;fa icon-return btn-icon&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="MaintanenceInfo.Name"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-maintenance-edit-content-name&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.AssetScope"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.AssetScope">[文档]</a>    <span class="k">class</span> <span class="nc">AssetScope</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;operation-prompt&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.AssetItem"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.AssetItem">[文档]</a>    <span class="k">class</span> <span class="nc">AssetItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;node-content-text&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceInfo.AssetItem.Click_Asset"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.AssetItem.Click_Asset">[文档]</a>        <span class="k">def</span> <span class="nf">Click_Asset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceInfo</span><span class="o">.</span><span class="n">AssetItem</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.MaintanenceTimeStart"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.MaintanenceTimeStart">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceTimeStart</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.MaintanenceTimeEnd"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.MaintanenceTimeEnd">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceTimeEnd</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.MaintanenceCircle"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.MaintanenceCircle">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceCircle</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.MaintanenceType"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.MaintanenceType">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceType</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.SystemClassify"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.SystemClassify">[文档]</a>    <span class="k">class</span> <span class="nc">SystemClassify</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.SaveButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.SaveButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceInfo.QuitButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceInfo.QuitButton">[文档]</a>    <span class="k">class</span> <span class="nc">QuitButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;放弃&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="MaintanenceList"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceList</span><span class="p">():</span>
+<div class="viewcode-block" id="MaintanenceList.MaintanenceNameInList"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceNameInList">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceNameInList</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@id=&#39;maintenance-list-view-table&#39;]//tr/td/span[text()=&#39;@#Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceList.MaintanenceNameInList.VerifyMaintanenceExist"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceNameInList.VerifyMaintanenceExist">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyMaintanenceExist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceList</span><span class="o">.</span><span class="n">MaintanenceNameInList</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceList.MaintanenceNameInList.Click"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceNameInList.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceList</span><span class="o">.</span><span class="n">MaintanenceNameInList</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="MaintanenceList.MaintanenceCount"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceCount">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@id=&#39;maintenance-list-view-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceList.MaintanenceName"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceName">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@id=&#39;maintenance-list-view-table&#39;]/tbody/tr[index]/td/span&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceList.MaintanenceName.GetMaintanenceName"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceList.MaintanenceName.GetMaintanenceName">[文档]</a>        <span class="k">def</span> <span class="nf">GetMaintanenceName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceList</span><span class="o">.</span><span class="n">MaintanenceName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div></div>
+
+
+<div class="viewcode-block" id="MaintanenceTaskList"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceTaskList</span><span class="p">():</span>
+<div class="viewcode-block" id="MaintanenceTaskList.CreateMaintanenceTicketButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.CreateMaintanenceTicketButton">[文档]</a>    <span class="k">class</span> <span class="nc">CreateMaintanenceTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;创建工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.ViewMaintanenceTicketButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.ViewMaintanenceTicketButton">[文档]</a>    <span class="k">class</span> <span class="nc">ViewMaintanenceTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;查看工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.AdjustButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.AdjustButton">[文档]</a>    <span class="k">class</span> <span class="nc">AdjustButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;防雷每月巡检&#39;]/../../../td/a[text()=&#39;调整时间&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.MaintanenceTaskCount"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.MaintanenceTaskCount">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceTaskCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@id=&#39;maintenance-list-view-content&#39;]/table/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.NextPageButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.NextPageButton">[文档]</a>    <span class="k">class</span> <span class="nc">NextPageButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;next-btn&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.MaintanenceName"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.MaintanenceName">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@id=&#39;maintenance-list-view-content&#39;]/table/tbody/tr[index]/td[2]/div/div&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceTaskList.MaintanenceName.GetMaintanenceName"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.MaintanenceName.GetMaintanenceName">[文档]</a>        <span class="k">def</span> <span class="nf">GetMaintanenceName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceTaskList</span><span class="o">.</span><span class="n">MaintanenceName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="MaintanenceTaskList.MaintanenceItemName"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.MaintanenceItemName">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceItemName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@id=&#39;maintenance-list-view-content&#39;]/table/tbody/tr/td[2]/div/div[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceTaskList.MaintanenceItemName.Click"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskList.MaintanenceItemName.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceTaskList</span><span class="o">.</span><span class="n">MaintanenceItemName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="FilterSidebar"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar">[文档]</a><span class="k">class</span> <span class="nc">FilterSidebar</span><span class="p">():</span>
+<div class="viewcode-block" id="FilterSidebar.Name"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.MaintanenceType"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.MaintanenceType">[文档]</a>    <span class="k">class</span> <span class="nc">MaintanenceType</span><span class="p">():</span>
+<div class="viewcode-block" id="FilterSidebar.MaintanenceType.Maintan"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.MaintanenceType.Maintan">[文档]</a>        <span class="k">class</span> <span class="nc">Maintan</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//li[@title=&#39;维护计划&#39;]/div/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.MaintanenceType.Action"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.MaintanenceType.Action">[文档]</a>        <span class="k">class</span> <span class="nc">Action</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//li[@title=&#39;演练计划&#39;]/div/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.MaintanenceType.Train"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.MaintanenceType.Train">[文档]</a>        <span class="k">class</span> <span class="nc">Train</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//li[@title=&#39;培训计划&#39;]/div/input&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.SystemClassifyButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.SystemClassifyButton">[文档]</a>    <span class="k">class</span> <span class="nc">SystemClassifyButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;系统分类&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.SystemClassifyButtonItem"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.SystemClassifyButtonItem">[文档]</a>    <span class="k">class</span> <span class="nc">SystemClassifyButtonItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]/span[@label=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FilterSidebar.SystemClassifyButtonItem.Click"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.SystemClassifyButtonItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FilterSidebar</span><span class="o">.</span><span class="n">SystemClassifyButtonItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.BuildingName"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.BuildingName">[文档]</a>    <span class="k">class</span> <span class="nc">BuildingName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;sidebar-content-item&#39;]/ul/li[@title=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FilterSidebar.BuildingName.Click"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.BuildingName.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FilterSidebar</span><span class="o">.</span><span class="n">BuildingName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.FilterButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.FilterSidebar.FilterButton">[文档]</a>    <span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;sidebar-bottom-action&#39;]/button/div/span&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="VerifyContain"><a class="viewcode-back" href="../../page.html#page.Maintanence.VerifyContain">[文档]</a><span class="k">def</span> <span class="nf">VerifyContain</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VerifyContainStringList"><a class="viewcode-back" href="../../page.html#page.Maintanence.VerifyContainStringList">[文档]</a><span class="k">def</span> <span class="nf">VerifyContainStringList</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substrLi</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">substr</span> <span class="ow">in</span> <span class="n">substrLi</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskDate"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskDate">[文档]</a><span class="k">class</span> <span class="nc">MaintanenceTaskDate</span><span class="p">():</span>
+<div class="viewcode-block" id="MaintanenceTaskDate.MonthButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskDate.MonthButton">[文档]</a>    <span class="k">class</span> <span class="nc">MonthButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;maintenance-content-header-selection&#39;]/div[2]/div&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MaintanenceTaskDate.Month"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskDate.Month">[文档]</a>    <span class="k">class</span> <span class="nc">Month</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]/span/div/div/div[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MaintanenceTaskDate.Month.Click"><a class="viewcode-back" href="../../page.html#page.Maintanence.MaintanenceTaskDate.Month.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">MaintanenceTaskDate</span><span class="o">.</span><span class="n">Month</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="AdjustDateDialog"><a class="viewcode-back" href="../../page.html#page.Maintanence.AdjustDateDialog">[文档]</a><span class="k">class</span> <span class="nc">AdjustDateDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="AdjustDateDialog.Date"><a class="viewcode-back" href="../../page.html#page.Maintanence.AdjustDateDialog.Date">[文档]</a>    <span class="k">class</span> <span class="nc">Date</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AdjustDateDialog.SaveButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.AdjustDateDialog.SaveButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AdjustDateDialog.QuitButton"><a class="viewcode-back" href="../../page.html#page.Maintanence.AdjustDateDialog.QuitButton">[文档]</a>    <span class="k">class</span> <span class="nc">QuitButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;放弃&#39;]&quot;</span><span class="p">)</span></div></div>
+
+
+
+
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

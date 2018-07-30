@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.AssetInfo &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.AssetInfo 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    demoprj.Page.Alarm</span>
+<span class="sd">    ~~~~~~~~~~~~~~</span>
+
+<span class="sd">    :Using: from demoprj.page import AssetInfo</span>
+
+<span class="sd">    :Description: All the class in this module are inherited from class WebElement.</span>
+<span class="sd">                    :from knitter.webelement import WebElement</span>
+<span class="sd">    :copyright: (c) 2016 by Emma.</span>
+<span class="sd">    :license: Schneider Electric, see LICENSE for more details.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">knitter</span> <span class="k">import</span> <span class="n">log</span>
+
+<div class="viewcode-block" id="OldParameterLabel"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OldParameterLabel">[文档]</a><span class="k">class</span> <span class="nc">OldParameterLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//h3[text()=&#39;设备老化参数计算&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProtectLabel"><a class="viewcode-back" href="../../page.html#page.AssetInfo.ProtectLabel">[文档]</a><span class="k">class</span> <span class="nc">ProtectLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;需量与保护定值比&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OperationParamTab"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationParamTab">[文档]</a><span class="k">class</span> <span class="nc">OperationParamTab</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;运维参数&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingFileTab"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BuildingFileTab">[文档]</a><span class="k">class</span> <span class="nc">BuildingFileTab</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;建筑文件&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmTab"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmTab">[文档]</a><span class="k">class</span> <span class="nc">AlarmTab</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;报警信息&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataViewTab"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewTab">[文档]</a><span class="k">class</span> <span class="nc">DataViewTab</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;数据监视&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditAlarmRule"><a class="viewcode-back" href="../../page.html#page.AssetInfo.EditAlarmRule">[文档]</a><span class="k">class</span> <span class="nc">EditAlarmRule</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;编辑报警短信通知规则&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditDataViewRule"><a class="viewcode-back" href="../../page.html#page.AssetInfo.EditDataViewRule">[文档]</a><span class="k">class</span> <span class="nc">EditDataViewRule</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;编辑显示规则&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmPersonList"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList">[文档]</a><span class="k">class</span> <span class="nc">AlarmPersonList</span><span class="p">():</span>
+<div class="viewcode-block" id="AlarmPersonList.PersonCount"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.PersonCount">[文档]</a>    <span class="k">class</span> <span class="nc">PersonCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;pop-alarm-contact-table-row&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmPersonList.AddButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.AddButton">[文档]</a>    <span class="k">class</span> <span class="nc">AddButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;添加&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmPersonList.SaveButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.SaveButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AlarmPersonList.UserName"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.UserName">[文档]</a>    <span class="k">class</span> <span class="nc">UserName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-contact-table-row&#39;]/div/span[text()=&#39;@#Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AlarmPersonList.UserName.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.UserName.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Verify that whether the user name is existed on view status of alarm notice contact person.</span>
+
+<span class="sd">                :Examples:</span>
+<span class="sd">                    + AssetInfo.AlarmPersonList.UserName().VerifyExistence(&#39;00newhttps&#39;)</span>
+<span class="sd">                    + AssetInfo.AlarmPersonList.UserName().VerifyExistence(&#39;Walter73&#39;, False)</span>
+
+<span class="sd">                :param name: user name</span>
+<span class="sd">                :param TrueOrFalse: verify existed true or false</span>
+<span class="sd">                                    - Default value is true, means if name is existed, result is pass</span>
+
+<span class="sd">                :Return:</span>
+<span class="sd">                    + pass: if &#39;TrueOrFalse = True&#39; and [name] is existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is not existed.</span>
+<span class="sd">                    + fail: if &#39;TrueOrFalse = True&#39; and [name] is not existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is existed.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AlarmPersonList</span><span class="o">.</span><span class="n">UserName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="AlarmPersonList.PersonItem"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.PersonItem">[文档]</a>    <span class="k">class</span> <span class="nc">PersonItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-alarm-nonrelated-table dialog-scroll&#39;]/ul/li[@title=&#39;#@Name&#39;]/div/input&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AlarmPersonList.PersonItem.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.PersonItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AlarmPersonList</span><span class="o">.</span><span class="n">PersonItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="AlarmPersonList.CompleteButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AlarmPersonList.CompleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">CompleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;完成&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="DataViewContent"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent">[文档]</a><span class="k">class</span> <span class="nc">DataViewContent</span><span class="p">():</span>
+<div class="viewcode-block" id="DataViewContent.GroupItem"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent.GroupItem">[文档]</a>    <span class="k">class</span> <span class="nc">GroupItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;item-name&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="DataViewContent.GroupItem.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent.GroupItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">DataViewContent</span><span class="o">.</span><span class="n">GroupItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="DataViewContent.GroupItemValue"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent.GroupItemValue">[文档]</a>    <span class="k">class</span> <span class="nc">GroupItemValue</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;item-name&#39; and text()=&#39;#@Name&#39;]/../div[@class=&#39;item-content&#39;]/div[@class=&#39;item-value&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="DataViewContent.GroupItemValue.GetText"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent.GroupItemValue.GetText">[文档]</a>        <span class="k">def</span> <span class="nf">GetText</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">DataViewContent</span><span class="o">.</span><span class="n">GroupItemValue</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="DataViewContent.DataChart"><a class="viewcode-back" href="../../page.html#page.AssetInfo.DataViewContent.DataChart">[文档]</a>    <span class="k">class</span> <span class="nc">DataChart</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">&quot;g[class=&#39;highcharts-markers highcharts-series-0 highcharts-tracker&#39;] path&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BoxRelated"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated">[文档]</a><span class="k">class</span> <span class="nc">BoxRelated</span><span class="p">():</span>
+<div class="viewcode-block" id="BoxRelated.DisassociateButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.DisassociateButton">[文档]</a>    <span class="k">class</span> <span class="nc">DisassociateButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;name&#39;]/div[text()=&#39;#@Name&#39;]/../../div[@class=&#39;operation&#39;]/span[text()=&#39;解除关联&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="BoxRelated.DisassociateButton.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.DisassociateButton.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BoxRelated</span><span class="o">.</span><span class="n">DisassociateButton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="BoxRelated.AssociateBoxLabel"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.AssociateBoxLabel">[文档]</a>    <span class="k">class</span> <span class="nc">AssociateBoxLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//h3[text()=&#39;关联网关&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BoxRelated.BoxItem"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.BoxItem">[文档]</a>    <span class="k">class</span> <span class="nc">BoxItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;name&#39;]/div[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="BoxRelated.BoxItem.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.BoxItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BoxRelated</span><span class="o">.</span><span class="n">BoxItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BoxRelated.BoxItem.ScrollIntoView"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.BoxItem.ScrollIntoView">[文档]</a>        <span class="k">def</span> <span class="nf">ScrollIntoView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BoxRelated</span><span class="o">.</span><span class="n">BoxItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">ScrollIntoView</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="BoxRelated.confirmDisassociateButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.confirmDisassociateButton">[文档]</a>    <span class="k">class</span> <span class="nc">confirmDisassociateButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;解除关联&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BoxRelated.AddBox"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.AddBox">[文档]</a>    <span class="k">class</span> <span class="nc">AddBox</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//h3[text()=&#39;关联网关&#39;]/../span[text()=&#39;添加&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BoxRelated.DialogBoxItem"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.DialogBoxItem">[文档]</a>    <span class="k">class</span> <span class="nc">DialogBoxItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;add-gateway-list-item&#39;]/div[@class=&#39;name&#39;]/div[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="BoxRelated.DialogBoxItem.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.DialogBoxItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BoxRelated</span><span class="o">.</span><span class="n">DialogBoxItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="BoxRelated.SaveBoxDialogButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BoxRelated.SaveBoxDialogButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveBoxDialogButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;btn-save&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BuildingFileInfo"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BuildingFileInfo">[文档]</a><span class="k">class</span> <span class="nc">BuildingFileInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="BuildingFileInfo.CreateFolderButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BuildingFileInfo.CreateFolderButton">[文档]</a>    <span class="k">class</span> <span class="nc">CreateFolderButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;新建文件夹&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingFileInfo.FolderName"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BuildingFileInfo.FolderName">[文档]</a>    <span class="k">class</span> <span class="nc">FolderName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;文件夹名称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingFileInfo.CreateButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.BuildingFileInfo.CreateButton">[文档]</a>    <span class="k">class</span> <span class="nc">CreateButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;新建&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FileList"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList">[文档]</a><span class="k">class</span> <span class="nc">FileList</span><span class="p">():</span>
+<div class="viewcode-block" id="FileList.FileListCount"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList.FileListCount">[文档]</a>    <span class="k">class</span> <span class="nc">FileListCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table doc-item-list&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FileList.FileListItem"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList.FileListItem">[文档]</a>    <span class="k">class</span> <span class="nc">FileListItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//table[@class=&#39;table fixed-table doc-item-list&#39;]/tbody/tr[index]/td[2]/a&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FileList.FileListItem.GetFileName"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList.FileListItem.GetFileName">[文档]</a>        <span class="k">def</span> <span class="nf">GetFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FileList</span><span class="o">.</span><span class="n">FileListItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FileList.FileListItemName"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList.FileListItemName">[文档]</a>    <span class="k">class</span> <span class="nc">FileListItemName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//table[@class=&#39;table fixed-table doc-item-list&#39;]/tbody/tr/td[2]/a[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FileList.FileListItemName.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.AssetInfo.FileList.FileListItemName.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Verify that whether the file folder name is existed on view status of alarm notice contact person.</span>
+
+<span class="sd">                :Examples:</span>
+<span class="sd">                    + AssetInfo.FileList.FileListItemName().VerifyExistence(&#39;auto crate folder&#39;)</span>
+
+<span class="sd">                :param name: file folder name</span>
+
+<span class="sd">                :Return:</span>
+<span class="sd">                    + pass: if file folder [name] is existed,</span>
+<span class="sd">                    + fail: if file folder [name] is not existed,</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FileList</span><span class="o">.</span><span class="n">FileListItemName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div></div></div>
+
+
+<span class="k">def</span> <span class="nf">VerifyContain</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">):</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether filter file name [</span><span class="si">%s</span><span class="s2">] contains filter key[</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="OperationParameter"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationParameter">[文档]</a><span class="k">class</span> <span class="nc">OperationParameter</span><span class="p">():</span>
+<div class="viewcode-block" id="OperationParameter.OldParameterValue"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationParameter.OldParameterValue">[文档]</a>    <span class="k">class</span> <span class="nc">OldParameterValue</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s1">&#39;tspan&#39;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ProtectValue"><a class="viewcode-back" href="../../page.html#page.AssetInfo.ProtectValue">[文档]</a><span class="k">class</span> <span class="nc">ProtectValue</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;point&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OperationDataInfo"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo">[文档]</a><span class="k">class</span> <span class="nc">OperationDataInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="OperationDataInfo.AddButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.AddButton">[文档]</a>    <span class="k">class</span> <span class="nc">AddButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;operation-action&#39; and text()=&#39;添加&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OperationDataInfo.NextStepButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.NextStepButton">[文档]</a>    <span class="k">class</span> <span class="nc">NextStepButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;fix-btn form-bottom-bar&#39;]//span[text()=&#39;下一步&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OperationDataInfo.GroupTitle"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.GroupTitle">[文档]</a>    <span class="k">class</span> <span class="nc">GroupTitle</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;group-border-top&#39;]/div/div[@class=&#39;pop-dev-data-group-head&#39;]/div[@class=&#39;data-group-left&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="OperationDataInfo.GroupTitle.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.GroupTitle.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Verify that whether the group is existed on the operation tab</span>
+
+<span class="sd">                :Examples:</span>
+<span class="sd">                    + AssetInfo.OperationDataInfo.GroupTitle().VerifyExistence(&#39;tiaozhacishu&#39;)</span>
+<span class="sd">                    + AssetInfo.OperationDataInfo.GroupTitle().VerifyExistence(&#39;tiaozhacishu&#39;, False)</span>
+
+<span class="sd">                :param name: group title</span>
+<span class="sd">                :param TrueOrFalse: verify existed true or false</span>
+<span class="sd">                                    - Default value is true, means if name is existed, result is pass</span>
+
+<span class="sd">                :Return:</span>
+<span class="sd">                    + pass: if &#39;TrueOrFalse = True&#39; and [name] is existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is not existed.</span>
+<span class="sd">                    + fail: if &#39;TrueOrFalse = True&#39; and [name] is not existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is existed.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">OperationDataInfo</span><span class="o">.</span><span class="n">GroupTitle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="OperationDataInfo.GroupContent"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.GroupContent">[文档]</a>    <span class="k">class</span> <span class="nc">GroupContent</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//div[@class=&#39;group-border-top&#39;]/div/div[@class=&#39;pop-dev-data-group-content&#39;]//div[@class=&#39;title&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="OperationDataInfo.GroupContent.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.AssetInfo.OperationDataInfo.GroupContent.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Verify that whether the group content is existed on the operation tab</span>
+
+<span class="sd">                :Examples:</span>
+<span class="sd">                    + AssetInfo.OperationDataInfo.GroupContent().VerifyExistence(u&quot;断路器状态&quot;)</span>
+<span class="sd">                    + AAssetInfo.OperationDataInfo.GroupContent().VerifyExistence(u&quot;断路器状态&quot;, False)</span>
+
+<span class="sd">                :param name: group content</span>
+<span class="sd">                :param TrueOrFalse: verify existed true or false</span>
+<span class="sd">                                                - Default value is true, means if name is existed, result is pass</span>
+
+<span class="sd">                :Return:</span>
+<span class="sd">                    + pass: if &#39;TrueOrFalse = True&#39; and [name] is existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is not existed.</span>
+<span class="sd">                    + fail: if &#39;TrueOrFalse = True&#39; and [name] is not existed,</span>
+<span class="sd">                            Or &#39;TrueOrFalse = False&#39; and [name] is existed.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">OperationDataInfo</span><span class="o">.</span><span class="n">GroupContent</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div></div>
+
+<div class="viewcode-block" id="AddOperationGroupDialog"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog">[文档]</a><span class="k">class</span> <span class="nc">AddOperationGroupDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="AddOperationGroupDialog.Name"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;维护参数名称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AddOperationGroupDialog.ParamItemEnable"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.ParamItemEnable">[文档]</a>    <span class="k">class</span> <span class="nc">ParamItemEnable</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;param-item&#39;]/div[@class=&#39;check-button edit&#39;]/label[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AddOperationGroupDialog.ParamItemEnable.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.ParamItemEnable.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AddOperationGroupDialog</span><span class="o">.</span><span class="n">ParamItemEnable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="AddOperationGroupDialog.ParamItemDisable"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.ParamItemDisable">[文档]</a>    <span class="k">class</span> <span class="nc">ParamItemDisable</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;param-item&#39;]/div[@class=&#39;check-button edit selected&#39;]/label[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AddOperationGroupDialog.ParamItemDisable.Click"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.ParamItemDisable.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AddOperationGroupDialog</span><span class="o">.</span><span class="n">ParamItemDisable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="AddOperationGroupDialog.SaveButton"><a class="viewcode-back" href="../../page.html#page.AssetInfo.AddOperationGroupDialog.SaveButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="VerifyEqual"><a class="viewcode-back" href="../../page.html#page.AssetInfo.VerifyEqual">[文档]</a><span class="k">def</span> <span class="nf">VerifyEqual</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">act</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Verify that whether var is equal to act</span>
+
+<span class="sd">        :Examples:</span>
+<span class="sd">            + AssetInfo.VerifyEqual(var, &#39;%&#39;)</span>
+
+<span class="sd">        :param var: The string which need to compare</span>
+<span class="sd">        :param act: The string which need to compare</span>
+
+<span class="sd">        :Return:</span>
+<span class="sd">            + pass: if var  = act</span>
+<span class="sd">            + fail: if var != act</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether Operation value [</span><span class="si">%s</span><span class="s2">] is equal to [</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">act</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="n">act</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Equal!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not equal!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VerifyIsDigit"><a class="viewcode-back" href="../../page.html#page.AssetInfo.VerifyIsDigit">[文档]</a><span class="k">def</span> <span class="nf">VerifyIsDigit</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Verify that whether var is digit</span>
+
+<span class="sd">        :Examples:</span>
+<span class="sd">            + AssetInfo.VerifyIsDigit(&#39;0.5&#39;)</span>
+
+<span class="sd">        :param var: The string which need to verify</span>
+
+<span class="sd">        :Return:</span>
+<span class="sd">            + pass: if var is digit</span>
+<span class="sd">            + fail: if var is not digit</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether Operation value [</span><span class="si">%s</span><span class="s2">] is digit&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Is Digit&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not Digit!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VerifyContain"><a class="viewcode-back" href="../../page.html#page.AssetInfo.VerifyContain">[文档]</a><span class="k">def</span> <span class="nf">VerifyContain</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Verify that whether &#39;&#39;str&#39;&#39; contains &#39;&#39;substr&#39;&#39;</span>
+
+<span class="sd">        :Examples:</span>
+<span class="sd">            + AssetInfo.VerifyContain(var, &#39;%&#39;)</span>
+
+<span class="sd">        :param var: The full stting</span>
+<span class="sd">        :param act: The sub string</span>
+
+<span class="sd">        :Return:</span>
+<span class="sd">            + pass: if str contains substr</span>
+<span class="sd">            + fail: if str not contains substr</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether Protect Value [</span><span class="si">%s</span><span class="s2">] contains key[</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

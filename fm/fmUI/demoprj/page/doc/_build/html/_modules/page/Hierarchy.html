@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Hierarchy &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Hierarchy 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<div class="viewcode-block" id="CustomerCodeLabel"><a class="viewcode-back" href="../../page.html#page.Hierarchy.CustomerCodeLabel">[文档]</a><span class="k">class</span> <span class="nc">CustomerCodeLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;客户编码&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AddHierarchyButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.AddHierarchyButton">[文档]</a><span class="k">class</span> <span class="nc">AddHierarchyButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class=&#39;fa btn-icon icon-add&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchHierarchyButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchHierarchyButton">[文档]</a><span class="k">class</span> <span class="nc">SearchHierarchyButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class=&#39;fa icon-search&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo">[文档]</a><span class="k">class</span> <span class="nc">SearchInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="SearchInfo.BaseLabel"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.BaseLabel">[文档]</a>    <span class="k">class</span> <span class="nc">BaseLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-asset-searchPage-content-title&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo.DeviceRadio"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.DeviceRadio">[文档]</a>    <span class="k">class</span> <span class="nc">DeviceRadio</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;设备&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo.ResultCount"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.ResultCount">[文档]</a>    <span class="k">class</span> <span class="nc">ResultCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;body&#39;]/table[@class=&#39;table fixed-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo.SearchScopeButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.SearchScopeButton">[文档]</a>    <span class="k">class</span> <span class="nc">SearchScopeButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;默认在整个客户下搜索，点击选择具体搜索范围&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo.SearchButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.SearchButton">[文档]</a>    <span class="k">class</span> <span class="nc">SearchButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;搜索&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearchInfo.SearchScopeItem"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.SearchScopeItem">[文档]</a>    <span class="k">class</span> <span class="nc">SearchScopeItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;node-content-text&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="SearchInfo.SearchScopeItem.Click"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SearchInfo.SearchScopeItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">SearchInfo</span><span class="o">.</span><span class="n">SearchScopeItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="Orgnization"><a class="viewcode-back" href="../../page.html#page.Hierarchy.Orgnization">[文档]</a><span class="k">class</span> <span class="nc">Orgnization</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;组织&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Site"><a class="viewcode-back" href="../../page.html#page.Hierarchy.Site">[文档]</a><span class="k">class</span> <span class="nc">Site</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;园区&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Building"><a class="viewcode-back" href="../../page.html#page.Hierarchy.Building">[文档]</a><span class="k">class</span> <span class="nc">Building</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;建筑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PanelRoom"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoom">[文档]</a><span class="k">class</span> <span class="nc">PanelRoom</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;配电室&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PanelBox"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBox">[文档]</a><span class="k">class</span> <span class="nc">PanelBox</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;配电柜&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Device"><a class="viewcode-back" href="../../page.html#page.Hierarchy.Device">[文档]</a><span class="k">class</span> <span class="nc">Device</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]//div[text()=&#39;设备&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.EditButton">[文档]</a><span class="k">class</span> <span class="nc">EditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeleteButton">[文档]</a><span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OrgnizationInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.OrgnizationInfo">[文档]</a><span class="k">class</span> <span class="nc">OrgnizationInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="OrgnizationInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.OrgnizationInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField-focus&#39;]//input&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="SaveHierarchyButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SaveHierarchyButton">[文档]</a><span class="k">class</span> <span class="nc">SaveHierarchyButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SiteInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SiteInfo">[文档]</a><span class="k">class</span> <span class="nc">SiteInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="SiteInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SiteInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField-focus&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SiteInfo.FloorArea"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SiteInfo.FloorArea">[文档]</a>    <span class="k">class</span> <span class="nc">FloorArea</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+<div class="viewcode-block" id="SiteInfo.BuildingArea"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SiteInfo.BuildingArea">[文档]</a>    <span class="k">class</span> <span class="nc">BuildingArea</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="SiteInfo.Image"><a class="viewcode-back" href="../../page.html#page.Hierarchy.SiteInfo.Image">[文档]</a>    <span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BuildingInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo">[文档]</a><span class="k">class</span> <span class="nc">BuildingInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="BuildingInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;建筑名称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingInfo.BuildingArea"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo.BuildingArea">[文档]</a>    <span class="k">class</span> <span class="nc">BuildingArea</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;建筑面积 (m²)&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingInfo.Completedate"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo.Completedate">[文档]</a>    <span class="k">class</span> <span class="nc">Completedate</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingInfo.BuildingPosition"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo.BuildingPosition">[文档]</a>    <span class="k">class</span> <span class="nc">BuildingPosition</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;地理位置&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuildingInfo.Image"><a class="viewcode-back" href="../../page.html#page.Hierarchy.BuildingInfo.Image">[文档]</a>    <span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="PanelRoomInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoomInfo">[文档]</a><span class="k">class</span> <span class="nc">PanelRoomInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="PanelRoomInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoomInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField-focus&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PanelRoomInfo.PanelPosition"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoomInfo.PanelPosition">[文档]</a>    <span class="k">class</span> <span class="nc">PanelPosition</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="PanelRoomInfo.TransformerCapacity"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoomInfo.TransformerCapacity">[文档]</a>    <span class="k">class</span> <span class="nc">TransformerCapacity</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="PanelRoomInfo.Image"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelRoomInfo.Image">[文档]</a>    <span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="PanelBoxInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBoxInfo">[文档]</a><span class="k">class</span> <span class="nc">PanelBoxInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="PanelBoxInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBoxInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField-focus&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PanelBoxInfo.PanelType"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBoxInfo.PanelType">[文档]</a>    <span class="k">class</span> <span class="nc">PanelType</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="PanelBoxInfo.PanelProduct"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBoxInfo.PanelProduct">[文档]</a>    <span class="k">class</span> <span class="nc">PanelProduct</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+<div class="viewcode-block" id="PanelBoxInfo.Image"><a class="viewcode-back" href="../../page.html#page.Hierarchy.PanelBoxInfo.Image">[文档]</a>    <span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="DeviceInfo"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeviceInfo">[文档]</a><span class="k">class</span> <span class="nc">DeviceInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="DeviceInfo.Name"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeviceInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField-focus&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeviceInfo.DeviceDescription"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeviceInfo.DeviceDescription">[文档]</a>    <span class="k">class</span> <span class="nc">DeviceDescription</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="DeviceInfo.DeviceProduct"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeviceInfo.DeviceProduct">[文档]</a>    <span class="k">class</span> <span class="nc">DeviceProduct</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="DeviceInfo.Image"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeviceInfo.Image">[文档]</a>    <span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;pop_image_upload_button&#39;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HierarchyTree"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree">[文档]</a><span class="k">class</span> <span class="nc">HierarchyTree</span><span class="p">:</span>
+<div class="viewcode-block" id="HierarchyTree.HierarchyTreeItem"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.HierarchyTreeItem">[文档]</a>    <span class="k">class</span> <span class="nc">HierarchyTreeItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;node-content-text&#39;]//span[text()=&#39;@#Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="HierarchyTree.HierarchyTreeItem.Click_Node"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.HierarchyTreeItem.Click_Node">[文档]</a>        <span class="k">def</span> <span class="nf">Click_Node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">HierarchyTree</span><span class="o">.</span><span class="n">HierarchyTreeItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HierarchyTree.HierarchyTreeItem.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.HierarchyTreeItem.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">HierarchyTree</span><span class="o">.</span><span class="n">HierarchyTreeItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="HierarchyTree.HierarchyTreeAction"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.HierarchyTreeAction">[文档]</a>    <span class="k">class</span> <span class="nc">HierarchyTreeAction</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;content&#39; and @title=&#39;@#Name&#39;]//em[@class=&#39;fa icon-hierarchy-fold&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="HierarchyTree.HierarchyTreeAction.Unfold_Node"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.HierarchyTreeAction.Unfold_Node">[文档]</a>        <span class="k">def</span> <span class="nf">Unfold_Node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">HierarchyTree</span><span class="o">.</span><span class="n">HierarchyTreeAction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="HierarchyTree.CopyButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.CopyButton">[文档]</a>    <span class="k">class</span> <span class="nc">CopyButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span><span class="s2">&quot;//div[@class=&#39;content&#39; and @title=&#39;@#Name&#39;]/div/div[@class=&#39;action node-content-icon icon-copy&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="HierarchyTree.CopyButton.Click"><a class="viewcode-back" href="../../page.html#page.Hierarchy.HierarchyTree.CopyButton.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">HierarchyTree</span><span class="o">.</span><span class="n">CopyButton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+
+<div class="viewcode-block" id="DeleteConfirmDialog"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeleteConfirmDialog">[文档]</a><span class="k">class</span> <span class="nc">DeleteConfirmDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="DeleteConfirmDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeleteConfirmDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteConfirmDialog.QuitButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.DeleteConfirmDialog.QuitButton">[文档]</a>    <span class="k">class</span> <span class="nc">QuitButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;放弃&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ForbiddenDeleteMessageBox"><a class="viewcode-back" href="../../page.html#page.Hierarchy.ForbiddenDeleteMessageBox">[文档]</a><span class="k">class</span> <span class="nc">ForbiddenDeleteMessageBox</span><span class="p">():</span>
+<div class="viewcode-block" id="ForbiddenDeleteMessageBox.CloseButton"><a class="viewcode-back" href="../../page.html#page.Hierarchy.ForbiddenDeleteMessageBox.CloseButton">[文档]</a>    <span class="k">class</span> <span class="nc">CloseButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//h3[contains(text(),&#39;无法删除&#39;)]/../div/div[@class=&#39;dialog-close-icon icon-close&#39;]&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

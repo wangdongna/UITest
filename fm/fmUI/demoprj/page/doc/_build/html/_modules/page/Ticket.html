@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.Ticket &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.Ticket 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">knitter</span> <span class="k">import</span> <span class="n">log</span>
+
+<div class="viewcode-block" id="BackTolistButton"><a class="viewcode-back" href="../../page.html#page.Ticket.BackTolistButton">[文档]</a><span class="k">class</span> <span class="nc">BackTolistButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class=&#39;fa icon-return btn-icon&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketTypelabel"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketTypelabel">[文档]</a><span class="k">class</span> <span class="nc">TicketTypelabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;工单类型&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AddTicketExecutorButton"><a class="viewcode-back" href="../../page.html#page.Ticket.AddTicketExecutorButton">[文档]</a><span class="k">class</span> <span class="nc">AddTicketExecutorButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-ticket-edit-content-operator-input&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AssetScopeButton"><a class="viewcode-back" href="../../page.html#page.Ticket.AssetScopeButton">[文档]</a><span class="k">class</span> <span class="nc">AssetScopeButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;maintenance-content&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterButton"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterButton">[文档]</a><span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;筛选&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.MyTicketButton">[文档]</a><span class="k">class</span> <span class="nc">MyTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;我的日程&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AllTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketButton">[文档]</a><span class="k">class</span> <span class="nc">AllTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//a[text()=&#39;全部工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar">[文档]</a><span class="k">class</span> <span class="nc">FilterSidebar</span><span class="p">():</span>
+<div class="viewcode-block" id="FilterSidebar.ID"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.ID">[文档]</a>    <span class="k">class</span> <span class="nc">ID</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewableTextField&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.FilterTimeStart"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.FilterTimeStart">[文档]</a>    <span class="k">class</span> <span class="nc">FilterTimeStart</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.FilterTimeEnd"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.FilterTimeEnd">[文档]</a>    <span class="k">class</span> <span class="nc">FilterTimeEnd</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketStatus"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketStatus">[文档]</a>    <span class="k">class</span> <span class="nc">TicketStatus</span><span class="p">():</span>
+<div class="viewcode-block" id="FilterSidebar.TicketStatus.ExtendTime"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketStatus.ExtendTime">[文档]</a>        <span class="k">class</span> <span class="nc">ExtendTime</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;逾期&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketStatus.NotStart"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketStatus.NotStart">[文档]</a>        <span class="k">class</span> <span class="nc">NotStart</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;未开始&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketStatus.Being"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketStatus.Being">[文档]</a>        <span class="k">class</span> <span class="nc">Being</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;执行中&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketStatus.Complete"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketStatus.Complete">[文档]</a>        <span class="k">class</span> <span class="nc">Complete</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;已完成&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketType"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketType">[文档]</a>    <span class="k">class</span> <span class="nc">TicketType</span><span class="p">():</span>
+<div class="viewcode-block" id="FilterSidebar.TicketType.Maintanence"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketType.Maintanence">[文档]</a>        <span class="k">class</span> <span class="nc">Maintanence</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;计划工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketType.Alarm"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketType.Alarm">[文档]</a>        <span class="k">class</span> <span class="nc">Alarm</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;报警工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketType.XianChang"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketType.XianChang">[文档]</a>        <span class="k">class</span> <span class="nc">XianChang</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;现场工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterSidebar.TicketType.SuiGong"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.TicketType.SuiGong">[文档]</a>        <span class="k">class</span> <span class="nc">SuiGong</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text()=&#39;随工工单&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.BuildingName"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.BuildingName">[文档]</a>    <span class="k">class</span> <span class="nc">BuildingName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;filter-section&#39;]/ul/li[@title=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="FilterSidebar.BuildingName.Click"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.BuildingName.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;@#Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">FilterSidebar</span><span class="o">.</span><span class="n">BuildingName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="FilterSidebar.FilterButton"><a class="viewcode-back" href="../../page.html#page.Ticket.FilterSidebar.FilterButton">[文档]</a>    <span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;filter-footer&#39;]/button&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="AssetItem"><a class="viewcode-back" href="../../page.html#page.Ticket.AssetItem">[文档]</a><span class="k">class</span> <span class="nc">AssetItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;node-content-text&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AssetItem.Click_Asset"><a class="viewcode-back" href="../../page.html#page.Ticket.AssetItem.Click_Asset">[文档]</a>    <span class="k">def</span> <span class="nf">Click_Asset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AssetItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="TicketExecutorList"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketExecutorList">[文档]</a><span class="k">class</span> <span class="nc">TicketExecutorList</span><span class="p">():</span>
+<div class="viewcode-block" id="TicketExecutorList.TicketExecutorItem"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketExecutorList.TicketExecutorItem">[文档]</a>    <span class="k">class</span> <span class="nc">TicketExecutorItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[@class = &#39;ticket-popover-operator-item-name&#39; and text() = &#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="TicketExecutorList.TicketExecutorItem.Click_Item"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketExecutorList.TicketExecutorItem.Click_Item">[文档]</a>        <span class="k">def</span> <span class="nf">Click_Item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">TicketExecutorList</span><span class="o">.</span><span class="n">TicketExecutorItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="TicketInfo"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo">[文档]</a><span class="k">class</span> <span class="nc">TicketInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="TicketInfo.TicketTypeButton"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.TicketTypeButton">[文档]</a>    <span class="k">class</span> <span class="nc">TicketTypeButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketInfo.SGTicketType"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.SGTicketType">[文档]</a>    <span class="k">class</span> <span class="nc">SGTicketType</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketInfo.XCTicketType"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.XCTicketType">[文档]</a>    <span class="k">class</span> <span class="nc">XCTicketType</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="TicketInfo.TicketTimeStart"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.TicketTimeStart">[文档]</a>    <span class="k">class</span> <span class="nc">TicketTimeStart</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketInfo.TicketTimeEnd"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.TicketTimeEnd">[文档]</a>    <span class="k">class</span> <span class="nc">TicketTimeEnd</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;datepicker-text&#39;]/input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="TicketInfo.TicketTaskContent"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketInfo.TicketTaskContent">[文档]</a>    <span class="k">class</span> <span class="nc">TicketTaskContent</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div></div>
+
+<div class="viewcode-block" id="SaveTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.SaveTicketButton">[文档]</a><span class="k">class</span> <span class="nc">SaveTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="QuitTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.QuitTicketButton">[文档]</a><span class="k">class</span> <span class="nc">QuitTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;放弃&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AddTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.AddTicketButton">[文档]</a><span class="k">class</span> <span class="nc">AddTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EditTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.EditTicketButton">[文档]</a><span class="k">class</span> <span class="nc">EditTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;编辑工单&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteTicketButton"><a class="viewcode-back" href="../../page.html#page.Ticket.DeleteTicketButton">[文档]</a><span class="k">class</span> <span class="nc">DeleteTicketButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketItem"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketItem">[文档]</a><span class="k">class</span> <span class="nc">TicketItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TicketTypeLabel"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketTypeLabel">[文档]</a><span class="k">class</span> <span class="nc">TicketTypeLabel</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;pop-viewable-title&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyTicketFilterList"><a class="viewcode-back" href="../../page.html#page.Ticket.MyTicketFilterList">[文档]</a><span class="k">class</span> <span class="nc">MyTicketFilterList</span><span class="p">():</span>
+<div class="viewcode-block" id="MyTicketFilterList.TicketCount"><a class="viewcode-back" href="../../page.html#page.Ticket.MyTicketFilterList.TicketCount">[文档]</a>    <span class="k">class</span> <span class="nc">TicketCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MyTicketFilterList.TicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.MyTicketFilterList.TicketName">[文档]</a>    <span class="k">class</span> <span class="nc">TicketName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr[index]/td[4]/span&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="MyTicketFilterList.TicketName.GetTicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.MyTicketFilterList.TicketName.GetTicketName">[文档]</a>        <span class="k">def</span> <span class="nf">GetTicketName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MyTicketFilterList</span><span class="o">.</span><span class="n">TicketName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="AllTicketFilterList"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketFilterList">[文档]</a><span class="k">class</span> <span class="nc">AllTicketFilterList</span><span class="p">():</span>
+<div class="viewcode-block" id="AllTicketFilterList.TicketCount"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketFilterList.TicketCount">[文档]</a>    <span class="k">class</span> <span class="nc">TicketCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AllTicketFilterList.TicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketFilterList.TicketName">[文档]</a>    <span class="k">class</span> <span class="nc">TicketName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr[index]/td[4]/span&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AllTicketFilterList.TicketName.GetTicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketFilterList.TicketName.GetTicketName">[文档]</a>        <span class="k">def</span> <span class="nf">GetTicketName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">AllTicketFilterList</span><span class="o">.</span><span class="n">TicketName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">GetText</span><span class="p">()</span></div></div></div>
+
+<div class="viewcode-block" id="AllTicketList"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketList">[文档]</a><span class="k">class</span> <span class="nc">AllTicketList</span><span class="p">():</span>
+<div class="viewcode-block" id="AllTicketList.TicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketList.TicketName">[文档]</a>    <span class="k">class</span> <span class="nc">TicketName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//table[@class=&#39;table fixed-table&#39;]/tbody/tr/td[4]/span[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="AllTicketList.TicketName.ClickTicketName"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketList.TicketName.ClickTicketName">[文档]</a>        <span class="k">def</span> <span class="nf">ClickTicketName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AllTicketList</span><span class="o">.</span><span class="n">TicketName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="AllTicketList.TicketName.VerifyExistence"><a class="viewcode-back" href="../../page.html#page.Ticket.AllTicketList.TicketName.VerifyExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">trueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AllTicketList</span><span class="o">.</span><span class="n">TicketName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">trueOrFalse</span><span class="p">)</span></div></div></div>
+
+<div class="viewcode-block" id="TicketContent"><a class="viewcode-back" href="../../page.html#page.Ticket.TicketContent">[文档]</a><span class="k">class</span> <span class="nc">TicketContent</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;detail-describe&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DeleteConfirmDialog"><a class="viewcode-back" href="../../page.html#page.Ticket.DeleteConfirmDialog">[文档]</a><span class="k">class</span> <span class="nc">DeleteConfirmDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="DeleteConfirmDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.Ticket.DeleteConfirmDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="VerifyContain"><a class="viewcode-back" href="../../page.html#page.Ticket.VerifyContain">[文档]</a><span class="k">def</span> <span class="nf">VerifyContain</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">):</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">step_normal</span><span class="p">(</span><span class="s2">&quot;Verify whether Ticket name [</span><span class="si">%s</span><span class="s2">] contains filter key[</span><span class="si">%s</span><span class="s2">]&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substr</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VerifyContainStringList"><a class="viewcode-back" href="../../page.html#page.Ticket.VerifyContainStringList">[文档]</a><span class="k">def</span> <span class="nf">VerifyContainStringList</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">substrLi</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">substr</span> <span class="ow">in</span> <span class="n">substrLi</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="o">.</span><span class="n">__contains__</span><span class="p">(</span><span class="n">substr</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">step_pass</span><span class="p">(</span><span class="s1">&#39;Contains!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">step_fail</span><span class="p">(</span><span class="s1">&#39;Not contains!&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

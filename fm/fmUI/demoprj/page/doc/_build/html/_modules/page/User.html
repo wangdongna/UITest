@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>page.User &#8212; Automation API lib 1.0.0 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="top" title="Automation API lib 1.0.0 文档" href="../../index.html" />
+    <link rel="up" title="模块代码" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>page.User 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">knitter.webelement</span> <span class="k">import</span> <span class="n">WebElement</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="k">import</span> <span class="n">By</span>
+
+<div class="viewcode-block" id="UserList"><a class="viewcode-back" href="../../page.html#page.User.UserList">[文档]</a><span class="k">class</span> <span class="nc">UserList</span><span class="p">():</span>
+<div class="viewcode-block" id="UserList.UserItem"><a class="viewcode-back" href="../../page.html#page.User.UserList.UserItem">[文档]</a>    <span class="k">class</span> <span class="nc">UserItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@class=&#39;pop-user-list-item-user-display-name&#39; and text()=&#39;#@UserName&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="UserList.UserItem.VerifyUserExistence"><a class="viewcode-back" href="../../page.html#page.User.UserList.UserItem.VerifyUserExistence">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyUserExistence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userName</span><span class="p">,</span> <span class="n">TrueOrFlase</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@UserName&#39;</span><span class="p">,</span> <span class="n">userName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserList</span><span class="o">.</span><span class="n">UserItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyExistence</span><span class="p">(</span><span class="n">TrueOrFlase</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserList.UserItem.Click"><a class="viewcode-back" href="../../page.html#page.User.UserList.UserItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userName</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@UserName&#39;</span><span class="p">,</span> <span class="n">userName</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserList</span><span class="o">.</span><span class="n">UserItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="UserList.UserListCount"><a class="viewcode-back" href="../../page.html#page.User.UserList.UserListCount">[文档]</a>    <span class="k">class</span> <span class="nc">UserListCount</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//li[contains(@class,&#39;pop-manage-list-item pop-user-list-item&#39;)]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="AddUserButton"><a class="viewcode-back" href="../../page.html#page.User.AddUserButton">[文档]</a><span class="k">class</span> <span class="nc">AddUserButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;pop-manage-list-title-action-item&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FilterUserButton"><a class="viewcode-back" href="../../page.html#page.User.FilterUserButton">[文档]</a><span class="k">class</span> <span class="nc">FilterUserButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;pop-manage-list-title-action-item&quot;</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo">[文档]</a><span class="k">class</span> <span class="nc">UserFilterSideBarInfo</span><span class="p">():</span>
+<div class="viewcode-block" id="UserFilterSideBarInfo.UserName"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.UserName">[文档]</a>    <span class="k">class</span> <span class="nc">UserName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;用户名&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.NickName"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.NickName">[文档]</a>    <span class="k">class</span> <span class="nc">NickName</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[text()=&#39;昵称&#39;]/../input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.AssociatedCustomerButton"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.AssociatedCustomerButton">[文档]</a>    <span class="k">class</span> <span class="nc">AssociatedCustomerButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;pop-viewableDropDownMenu-ddm&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.AssociatedCustomerItem"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.AssociatedCustomerItem">[文档]</a>    <span class="k">class</span> <span class="nc">AssociatedCustomerItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style=&#39;opacity: 1;&#39;]/span/div/div[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.AssociatedCustomerItem.Click"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.AssociatedCustomerItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserFilterSideBarInfo</span><span class="o">.</span><span class="n">AssociatedCustomerItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.RoleItem"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.RoleItem">[文档]</a>    <span class="k">class</span> <span class="nc">RoleItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//input[@name=&#39;pop_user_filter_role_radio_group&#39;]/..//div/div/label[text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.RoleItem.Click"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.RoleItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserFilterSideBarInfo</span><span class="o">.</span><span class="n">RoleItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="UserFilterSideBarInfo.FilterButton"><a class="viewcode-back" href="../../page.html#page.User.UserFilterSideBarInfo.FilterButton">[文档]</a>    <span class="k">class</span> <span class="nc">FilterButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;sidebar-bottom-action&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="UserSaveButton"><a class="viewcode-back" href="../../page.html#page.User.UserSaveButton">[文档]</a><span class="k">class</span> <span class="nc">UserSaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserEditButton"><a class="viewcode-back" href="../../page.html#page.User.UserEditButton">[文档]</a><span class="k">class</span> <span class="nc">UserEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserDeleteButton"><a class="viewcode-back" href="../../page.html#page.User.UserDeleteButton">[文档]</a><span class="k">class</span> <span class="nc">UserDeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfirmDeleteDialog"><a class="viewcode-back" href="../../page.html#page.User.ConfirmDeleteDialog">[文档]</a><span class="k">class</span> <span class="nc">ConfirmDeleteDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="ConfirmDeleteDialog.DeleteButton"><a class="viewcode-back" href="../../page.html#page.User.ConfirmDeleteDialog.DeleteButton">[文档]</a>    <span class="k">class</span> <span class="nc">DeleteButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;删除&#39;]&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="UserDataScopeTabButton"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeTabButton">[文档]</a><span class="k">class</span> <span class="nc">UserDataScopeTabButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//span[@data-tab-index=&#39;2&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserDataScopeEditButton"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeEditButton">[文档]</a><span class="k">class</span> <span class="nc">UserDataScopeEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;编辑&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserInfo"><a class="viewcode-back" href="../../page.html#page.User.UserInfo">[文档]</a><span class="k">class</span> <span class="nc">UserInfo</span><span class="p">:</span>
+<div class="viewcode-block" id="UserInfo.Name"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.Name">[文档]</a>    <span class="k">class</span> <span class="nc">Name</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;pop-user-detail-name&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserInfo.PostButton"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.PostButton">[文档]</a>    <span class="k">class</span> <span class="nc">PostButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserInfo.Post"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.Post">[文档]</a>    <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style = &#39;opacity: 1;&#39;]/span&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">6</span></div>
+
+<div class="viewcode-block" id="UserInfo.FuncPermissonButton"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.FuncPermissonButton">[文档]</a>    <span class="k">class</span> <span class="nc">FuncPermissonButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s1">&#39;pop-viewableDropDownMenu-ddm&#39;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="UserInfo.FuncPermisson"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.FuncPermisson">[文档]</a>    <span class="k">class</span> <span class="nc">FuncPermisson</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@style = &#39;opacity: 1;&#39;]/span&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">13</span></div>
+
+<div class="viewcode-block" id="UserInfo.MobilePhone"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.MobilePhone">[文档]</a>    <span class="k">class</span> <span class="nc">MobilePhone</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;pop-user-detail-content-item&#39;]//input&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="UserInfo.Mail"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.Mail">[文档]</a>    <span class="k">class</span> <span class="nc">Mail</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class = &#39;pop-user-detail-content-item&#39;]//input&quot;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="UserInfo.Comments"><a class="viewcode-back" href="../../page.html#page.User.UserInfo.Comments">[文档]</a>    <span class="k">class</span> <span class="nc">Comments</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span></div></div>
+
+<div class="viewcode-block" id="UserDataScopeList"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeList">[文档]</a><span class="k">class</span> <span class="nc">UserDataScopeList</span><span class="p">():</span>
+<div class="viewcode-block" id="UserDataScopeList.UserDataScopeItem"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeList.UserDataScopeItem">[文档]</a>    <span class="k">class</span> <span class="nc">UserDataScopeItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[contains(@class,&#39;pop-user-detail-customer-subcheck-block-item-label&#39;) and text() = &#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="UserDataScopeList.UserDataScopeItem.Click"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeList.UserDataScopeItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserDataScopeList</span><span class="o">.</span><span class="n">UserDataScopeItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="UserDataScopeList.UserDataScopeItem.VerifyVisible"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeList.UserDataScopeItem.VerifyVisible">[文档]</a>        <span class="k">def</span> <span class="nf">VerifyVisible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">TrueOrFalse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">UserDataScopeList</span><span class="o">.</span><span class="n">UserDataScopeItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">VerifyVisible</span><span class="p">(</span><span class="n">TrueOrFalse</span><span class="p">)</span></div></div></div>
+
+<div class="viewcode-block" id="DataScopeEditButton"><a class="viewcode-back" href="../../page.html#page.User.DataScopeEditButton">[文档]</a><span class="k">class</span> <span class="nc">DataScopeEditButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//label[text() = &#39;#@Name&#39;]/../../span[text()=&#39;编辑数据权限&#39;]&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="DataScopeEditButton.Click"><a class="viewcode-back" href="../../page.html#page.User.DataScopeEditButton.Click">[文档]</a>    <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DataScopeEditButton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="UserDataScopeSaveButton"><a class="viewcode-back" href="../../page.html#page.User.UserDataScopeSaveButton">[文档]</a><span class="k">class</span> <span class="nc">UserDataScopeSaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;form-bottom-bar-btn&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataScopeDialog"><a class="viewcode-back" href="../../page.html#page.User.DataScopeDialog">[文档]</a><span class="k">class</span> <span class="nc">DataScopeDialog</span><span class="p">():</span>
+<div class="viewcode-block" id="DataScopeDialog.HierarchyItem"><a class="viewcode-back" href="../../page.html#page.User.DataScopeDialog.HierarchyItem">[文档]</a>    <span class="k">class</span> <span class="nc">HierarchyItem</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-content&#39;]//div[@class=&#39;node-content-text&#39; and text()=&#39;#@Name&#39;]&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">by</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">by</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">WebElement</span><span class="o">.</span><span class="n">value</span>
+
+<div class="viewcode-block" id="DataScopeDialog.HierarchyItem.Click"><a class="viewcode-back" href="../../page.html#page.User.DataScopeDialog.HierarchyItem.Click">[文档]</a>        <span class="k">def</span> <span class="nf">Click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#@Name&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">DataScopeDialog</span><span class="o">.</span><span class="n">HierarchyItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span></div></div>
+
+<div class="viewcode-block" id="DataScopeDialog.SaveButton"><a class="viewcode-back" href="../../page.html#page.User.DataScopeDialog.SaveButton">[文档]</a>    <span class="k">class</span> <span class="nc">SaveButton</span><span class="p">(</span><span class="n">WebElement</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&quot;//div[@class=&#39;dialog-actions&#39;]//span[text()=&#39;保存&#39;]&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, emma.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
